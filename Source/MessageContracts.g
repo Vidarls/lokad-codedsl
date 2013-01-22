@@ -23,6 +23,8 @@ tokens
 	NamespaceToken;
 	ExternToken;
 	UsingToken;
+	ComGuidToken;
+	ComInterfaceGuidToken;
 }
 
 @lexer::namespace { MessageContracts }
@@ -73,8 +75,8 @@ member
 block
     :   lc='('
             (member (',' member)*)?
-        ')' representation?
-        -> ^(BlockToken[$lc,"Block"] member* representation?)
+        ')' representation? comGuid? comInterfaceGuid?
+        -> ^(BlockToken[$lc,"Block"] member* representation? comGuid? comInterfaceGuid?)
     ;    
     
 representation
@@ -82,6 +84,12 @@ representation
 	
 extern_declaration
     :   EXTERN STRING ';' -> ^(ExternToken STRING);
+   
+comGuid
+	:	CLASS GUID -> ^(ComGuidToken GUID);
+
+comInterfaceGuid
+	:	ALIAS GUID -> ^(ComInterfaceGuidToken GUID);
 
 EXPLICIT	
 	:	'explicit';
@@ -93,7 +101,10 @@ CONST
 	: 'const';	
 INTERFACE 	
 	:	'interface';
-
+CLASS
+	:	'class';
+ALIAS
+	:	'alias';
 NAMESPACE 
 	:	'namespace';
 EXTERN
@@ -101,6 +112,8 @@ EXTERN
     
 ID  :	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'<'|'>'|'['|']')* ;
 
+GUID 
+	:	'[Guid("' (HEX_DIGIT|'-')+ '")]';
 
 Modifier
 	: '?'

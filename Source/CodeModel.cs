@@ -87,7 +87,7 @@ namespace Lokad.CodeDsl
 
         public enum Kinds
         {
-            Field, StringRepresentation
+            Field, StringRepresentation, ComGuid, ComInterfaceGuid
         }
     }
 
@@ -104,7 +104,21 @@ namespace Lokad.CodeDsl
 
         public string StringRepresentation;
 
+        public ComInteropData InteropData;
+
         public List<Member> Members = new List<Member>();
+    }
+
+    public sealed class ComInteropData
+    {
+        public readonly string ClassGuidAttribute;
+        public readonly string ComInterfaceGuidAttribute;
+
+        public ComInteropData(string classGuidAttribute, string comInterfaceGuidAttribute)
+        {
+            ClassGuidAttribute = classGuidAttribute;
+            ComInterfaceGuidAttribute = comInterfaceGuidAttribute;
+        }
     }
 
     public sealed class Modifier

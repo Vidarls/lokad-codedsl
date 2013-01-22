@@ -59,6 +59,20 @@ namespace Lokad.CodeDsl
                 yield break;
             }
 
+            if (tree.Type == MessageContractsLexer.ComGuidToken)
+            {
+                var text = tree.GetChild(0).Text;
+                yield return new Member(null, text, null, Member.Kinds.ComGuid);
+                yield break;
+            }
+
+            if (tree.Type == MessageContractsLexer.ComInterfaceGuidToken)
+            {
+                var text = tree.GetChild(0).Text;
+                yield return new Member(null, text, null, Member.Kinds.ComInterfaceGuid);
+                yield break;
+            }
+
             var node = (Antlr.Runtime.Tree.CommonErrorNode) tree;
             throw new InvalidOperationException(string.Format("Line: {0}\r\nUnknown fragment: {1}", node.start.Line, node.Text));
         }
@@ -114,6 +128,9 @@ namespace Lokad.CodeDsl
                         }
                     }
 
+                    var comClassGuid = "";
+                    var comInterfaceGuid = "";
+
                     for (int i = 0; i < block.ChildCount; i++)
                     {
                         var members = WalkContractMember(block.GetChild(i), context).ToArray();
@@ -131,12 +148,22 @@ namespace Lokad.CodeDsl
                             default:
                                 throw new InvalidOperationException("Only one string representation per message");
                         }
+
+                        if (members.Any(m => m.Kind == Member.Kinds.ComGuid))
+                            comClassGuid = members.First(m => m.Kind == Member.Kinds.ComGuid).Name;
+                        if (members.Any(m => m.Kind == Member.Kinds.ComInterfaceGuid))
+                            comInterfaceGuid = members.First(m => m.Kind == Member.Kinds.ComInterfaceGuid).Name;
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(comClassGuid) && !string.IsNullOrWhiteSpace(comInterfaceGuid))
+                    {
+                        message.InteropData = new ComInteropData(comClassGuid, comInterfaceGuid);
+                        message.Modifiers.Add(new Modifier("",string.Format("I{0}",message.Name)));
+                        context.Using.Add("System.Runtime.InteropServices");
                     }
 
                     context.Contracts.Add(message);
                     context.CurrentEntity.Messages.Add(message);
-
-
                     break;
 
                 case MessageContractsLexer.EntityDefinition:

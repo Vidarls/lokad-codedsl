@@ -71,12 +71,14 @@ public sealed class {0}";
         {
             foreach (var contract in context.Contracts)
             {
+                if (contract.InteropData != null)
+                    WriteInteropData(writer, contract);
+
                 writer.Write(ClassNameTemplate, contract.Name, context.CurrentExtern);
 
                 if (contract.Modifiers.Any())
-                {
                     writer.Write(" : {0}", string.Join(", ", contract.Modifiers.Select(s => s.Interface).ToArray()));
-                }
+
                 writer.WriteLine();
 
                 writer.WriteLine("{");
@@ -113,6 +115,40 @@ public sealed class {0}";
                 GenerateEntityInterface(entity, writer, "?", "public interface I{0}ApplicationService");
                 GenerateEntityInterface(entity, writer, "!", "public interface I{0}State");
             }
+        }
+
+        private void WriteInteropData(CodeWriter writer, Message contract)
+        {
+            writer.WriteLine("public partial class MessageFactory");
+            writer.WriteLine("{");
+            writer.Indent += 1;
+            writer.Write("public I{0} Create{0} (", contract.Name);
+            WriteParameters(contract, writer);
+            writer.WriteLine(")");
+            writer.WriteLine("{");
+            writer.Indent += 1;
+            writer.Write("return new {0}(", contract.Name);
+            WriteFactoryParamteres(contract, writer);
+            writer.WriteLine(");");
+            writer.Indent -= 1;
+            writer.WriteLine("}");
+            writer.Indent -= 1;
+            writer.WriteLine("}");
+            writer.WriteLine();
+
+            writer.WriteLine(contract.InteropData.ComInterfaceGuidAttribute);
+            writer.WriteLine("public partial interface I{0}", contract.Name);
+            writer.WriteLine("{");
+            writer.Indent += 1;
+            if (contract.Members.Count > 0)
+            {
+                WriteInterfaceMembers(contract, writer);
+            }
+            writer.Indent -= 1;
+            writer.WriteLine("}");
+            writer.WriteLine();
+            writer.WriteLine(contract.InteropData.ClassGuidAttribute);
+            writer.WriteLine("[ClassInterface(ClassInterfaceType.None)]");
         }
 
         static void WritePrivateCtor(CodeWriter writer, Message contract)
@@ -225,7 +261,13 @@ public sealed class {0}";
             }
         }
 
-
+        void WriteInterfaceMembers(Message message, CodeWriter writer)
+        {
+            foreach (var member in message.Members)
+            {
+                writer.WriteLine("{0} {1} {{ get; }}", member.Type,GeneratorUtil.MemberCase(member.Name));
+            }
+        }
 
         void WriteMembers(Message message, CodeWriter writer)
         {
@@ -238,6 +280,18 @@ public sealed class {0}";
                 idx += 1;
             }
         }
+
+        void WriteFactoryParamteres(Message message, CodeWriter writer)
+        {
+            var separator = "";
+            
+            foreach (var member in message.Members)
+            {
+                writer.Write("{0}{1}",separator, GeneratorUtil.ParameterCase(member.Name));
+                separator = ", ";
+            }
+        }
+    
         void WriteParameters(Message message, CodeWriter writer)
         {
             var first = true;
