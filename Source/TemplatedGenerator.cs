@@ -136,6 +136,7 @@ public sealed class {0}";
             writer.WriteLine("}");
             writer.WriteLine();
 
+            writer.WriteLine("[ComVisible(true)]");
             writer.WriteLine(contract.InteropData.ComInterfaceGuidAttribute);
             writer.WriteLine("public partial interface I{0}", contract.Name);
             writer.WriteLine("{");
@@ -147,6 +148,7 @@ public sealed class {0}";
             writer.Indent -= 1;
             writer.WriteLine("}");
             writer.WriteLine();
+            writer.WriteLine("[ComVisible(true)]");
             writer.WriteLine(contract.InteropData.ClassGuidAttribute);
             writer.WriteLine("[ClassInterface(ClassInterfaceType.None)]");
         }
