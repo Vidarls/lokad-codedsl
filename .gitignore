@@ -10,5 +10,6 @@ _ReSharper.*
 *.DotSettings
 *.Cache
 *.cache
+*.ncrunch*
 ~$*
 *~
