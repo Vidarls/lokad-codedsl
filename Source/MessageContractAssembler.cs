@@ -158,7 +158,7 @@ namespace Lokad.CodeDsl
                     if (!string.IsNullOrWhiteSpace(comClassGuid) && !string.IsNullOrWhiteSpace(comInterfaceGuid))
                     {
                         message.InteropData = new ComInteropData(comClassGuid, comInterfaceGuid);
-                        message.Modifiers.Add(new Modifier("",string.Format("I{0}",message.Name)));
+                        message.Modifiers.Insert(0, new Modifier("",string.Format("I{0}",message.Name)));
                         context.Using.Add("System.Runtime.InteropServices");
                     }
 

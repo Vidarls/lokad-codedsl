@@ -119,16 +119,26 @@ public sealed class {0}";
 
         private void WriteInteropData(CodeWriter writer, Message contract)
         {
+            writer.WriteLine("public partial interface IMessageFactory");
+            writer.WriteLine("{");
+            writer.Indent += 1;
+            writer.Write("{0} Create{0} (", contract.Name);
+            WriteParametersForFactoryMethod(contract, writer);
+            writer.WriteLine(");");
+            writer.Indent -= 1;
+            writer.WriteLine("}");
+            writer.WriteLine();
+
             writer.WriteLine("public partial class MessageFactory");
             writer.WriteLine("{");
             writer.Indent += 1;
-            writer.Write("public I{0} Create{0} (", contract.Name);
-            WriteParameters(contract, writer);
+            writer.Write("public {0} Create{0} (", contract.Name);
+            WriteParametersForFactoryMethod(contract, writer);
             writer.WriteLine(")");
             writer.WriteLine("{");
             writer.Indent += 1;
             writer.Write("return new {0}(", contract.Name);
-            WriteFactoryParamteres(contract, writer);
+            WriteNewObjectArguments(contract, writer);
             writer.WriteLine(");");
             writer.Indent -= 1;
             writer.WriteLine("}");
@@ -138,6 +148,7 @@ public sealed class {0}";
 
             writer.WriteLine("[ComVisible(true)]");
             writer.WriteLine(contract.InteropData.ComInterfaceGuidAttribute);
+            writer.WriteLine("[InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]");
             writer.WriteLine("public partial interface I{0}", contract.Name);
             writer.WriteLine("{");
             writer.Indent += 1;
@@ -283,13 +294,17 @@ public sealed class {0}";
             }
         }
 
-        void WriteFactoryParamteres(Message message, CodeWriter writer)
+        void WriteNewObjectArguments(Message message, CodeWriter writer)
         {
             var separator = "";
             
             foreach (var member in message.Members)
             {
-                writer.Write("{0}{1}",separator, GeneratorUtil.ParameterCase(member.Name));
+                var toWrite = member.Type == typeof(Guid).Name
+                    ? "Guid.Parse(" + GeneratorUtil.ParameterCase(member.Name) + ")" 
+                    :   GeneratorUtil.ParameterCase(member.Name);
+
+                writer.Write("{0}{1}",separator, toWrite);
                 separator = ", ";
             }
         }
@@ -308,6 +323,23 @@ public sealed class {0}";
                     writer.Write(", ");
                 }
                 writer.Write("{0} {1}", member.Type, GeneratorUtil.ParameterCase(member.Name));
+            }
+        }
+
+        void WriteParametersForFactoryMethod(Message message, CodeWriter writer)
+        {
+            var first = true;
+            foreach (var member in message.Members)
+            {
+                if (first)
+                {
+                    first = false;
+                }
+                else
+                {
+                    writer.Write(", ");
+                }
+                writer.Write("{0} {1}", member.Type.Replace(typeof(Guid).Name, typeof(string).Name), GeneratorUtil.ParameterCase(member.Name));
             }
         }
 
