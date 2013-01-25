@@ -91,6 +91,8 @@ comGuid
 comInterfaceGuid
 	:	ALIAS GUID -> ^(ComInterfaceGuidToken GUID);
 
+NORDIC : ('\u00E6' | '\u00C6' | '\u00F8' | '\u00D8' | '\u00E5' | '\u00C5');
+
 EXPLICIT	
 	:	'explicit';
 IF
@@ -110,7 +112,8 @@ NAMESPACE
 EXTERN
     :	'extern';
     
-ID  :	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'<'|'>'|'['|']')* ;
+ID  :	('a'..'z'|'A'..'Z'|'_'| NORDIC)('a'..'z'|'A'..'Z'| NORDIC | '0'..'9'|'_'|'<'|'>'|'['|']')* ;
+
 
 GUID 
 	:	'[Guid("' (HEX_DIGIT|'-')+ '")]';

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4.1.9004 .\\MessageContracts.g 2013-01-22 09:45:04
+// $ANTLR 3.4.1.9004 .\\MessageContracts.g 2013-01-25 11:35:47
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -34,7 +34,7 @@ namespace  MessageContracts
 public partial class MessageContractsParser : Antlr.Runtime.Parser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ALIAS", "BlockToken", "CLASS", "COMMENT", "CONST", "ComGuidToken", "ComInterfaceGuidToken", "CommandToken", "DisctionaryToken", "ESC_SEQ", "EXPLICIT", "EXTERN", "EntityDefinition", "EventToken", "ExternToken", "FragmentEntry", "FragmentGroup", "FragmentReference", "GUID", "HEX_DIGIT", "ID", "IF", "INT", "INTERFACE", "MemberToken", "Modifier", "ModifierDefinition", "NAMESPACE", "NamespaceToken", "OCTAL_ESC", "STRING", "StringRepresentationToken", "TypeToken", "UNICODE_ESC", "USING", "UsingToken", "WS", "'('", "')'", "','", "'.'", "';'", "'='", "'{'", "'}'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ALIAS", "BlockToken", "CLASS", "COMMENT", "CONST", "ComGuidToken", "ComInterfaceGuidToken", "CommandToken", "DisctionaryToken", "ESC_SEQ", "EXPLICIT", "EXTERN", "EntityDefinition", "EventToken", "ExternToken", "FragmentEntry", "FragmentGroup", "FragmentReference", "GUID", "HEX_DIGIT", "ID", "IF", "INT", "INTERFACE", "MemberToken", "Modifier", "ModifierDefinition", "NAMESPACE", "NORDIC", "NamespaceToken", "OCTAL_ESC", "STRING", "StringRepresentationToken", "TypeToken", "UNICODE_ESC", "USING", "UsingToken", "WS", "'('", "')'", "','", "'.'", "';'", "'='", "'{'", "'}'"
 	};
 	public const int EOF=-1;
 	public const int ALIAS=4;
@@ -65,16 +65,16 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 	public const int Modifier=29;
 	public const int ModifierDefinition=30;
 	public const int NAMESPACE=31;
-	public const int NamespaceToken=32;
-	public const int OCTAL_ESC=33;
-	public const int STRING=34;
-	public const int StringRepresentationToken=35;
-	public const int TypeToken=36;
-	public const int UNICODE_ESC=37;
-	public const int USING=38;
-	public const int UsingToken=39;
-	public const int WS=40;
-	public const int T__41=41;
+	public const int NORDIC=32;
+	public const int NamespaceToken=33;
+	public const int OCTAL_ESC=34;
+	public const int STRING=35;
+	public const int StringRepresentationToken=36;
+	public const int TypeToken=37;
+	public const int UNICODE_ESC=38;
+	public const int USING=39;
+	public const int UsingToken=40;
+	public const int WS=41;
 	public const int T__42=42;
 	public const int T__43=43;
 	public const int T__44=44;
@@ -82,6 +82,7 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 	public const int T__46=46;
 	public const int T__47=47;
 	public const int T__48=48;
+	public const int T__49=49;
 
 	#if ANTLR_DEBUG
 		private static readonly bool[] decisionCanBacktrack =
@@ -484,8 +485,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 	    object char_literal13_tree = default(object);
 	    RewriteRuleITokenStream stream_NAMESPACE=new RewriteRuleITokenStream(adaptor,"token NAMESPACE");
 	    RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
-	    RewriteRuleITokenStream stream_44=new RewriteRuleITokenStream(adaptor,"token 44");
 	    RewriteRuleITokenStream stream_45=new RewriteRuleITokenStream(adaptor,"token 45");
+	    RewriteRuleITokenStream stream_46=new RewriteRuleITokenStream(adaptor,"token 46");
 
 		try { DebugEnterRule(GrammarFileName, "namespace_declaration");
 		DebugLocation(47, 28);
@@ -517,7 +518,7 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 				try { DebugEnterDecision(3, decisionCanBacktrack[3]);
 				int LA3_1 = input.LA(1);
 
-				if ((LA3_1==44))
+				if ((LA3_1==45))
 				{
 					alt3 = 1;
 				}
@@ -531,8 +532,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 					// .\\MessageContracts.g:48:22: '.' ID
 					{
 					DebugLocation(48, 22);
-					char_literal11=(IToken)Match(input,44,Follow._44_in_namespace_declaration189);  
-					stream_44.Add(char_literal11);
+					char_literal11=(IToken)Match(input,45,Follow._45_in_namespace_declaration189);  
+					stream_45.Add(char_literal11);
 
 					DebugLocation(48, 26);
 					ID12=(IToken)Match(input,ID,Follow._ID_in_namespace_declaration191);  
@@ -556,8 +557,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 			}
 
 			DebugLocation(48, 32);
-			char_literal13=(IToken)Match(input,45,Follow._45_in_namespace_declaration196);  
-			stream_45.Add(char_literal13);
+			char_literal13=(IToken)Match(input,46,Follow._46_in_namespace_declaration196);  
+			stream_46.Add(char_literal13);
 
 
 
@@ -659,8 +660,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 	    object char_literal18_tree = default(object);
 	    RewriteRuleITokenStream stream_USING=new RewriteRuleITokenStream(adaptor,"token USING");
 	    RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
-	    RewriteRuleITokenStream stream_44=new RewriteRuleITokenStream(adaptor,"token 44");
 	    RewriteRuleITokenStream stream_45=new RewriteRuleITokenStream(adaptor,"token 45");
+	    RewriteRuleITokenStream stream_46=new RewriteRuleITokenStream(adaptor,"token 46");
 
 		try { DebugEnterRule(GrammarFileName, "using_declaration");
 		DebugLocation(51, 24);
@@ -692,7 +693,7 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 				try { DebugEnterDecision(4, decisionCanBacktrack[4]);
 				int LA4_1 = input.LA(1);
 
-				if ((LA4_1==44))
+				if ((LA4_1==45))
 				{
 					alt4 = 1;
 				}
@@ -706,8 +707,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 					// .\\MessageContracts.g:52:18: '.' ID
 					{
 					DebugLocation(52, 18);
-					char_literal16=(IToken)Match(input,44,Follow._44_in_using_declaration232);  
-					stream_44.Add(char_literal16);
+					char_literal16=(IToken)Match(input,45,Follow._45_in_using_declaration232);  
+					stream_45.Add(char_literal16);
 
 					DebugLocation(52, 22);
 					ID17=(IToken)Match(input,ID,Follow._ID_in_using_declaration234);  
@@ -731,8 +732,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 			}
 
 			DebugLocation(52, 28);
-			char_literal18=(IToken)Match(input,45,Follow._45_in_using_declaration239);  
-			stream_45.Add(char_literal18);
+			char_literal18=(IToken)Match(input,46,Follow._46_in_using_declaration239);  
+			stream_46.Add(char_literal18);
 
 
 
@@ -836,8 +837,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 	    object char_literal24_tree = default(object);
 	    RewriteRuleITokenStream stream_CONST=new RewriteRuleITokenStream(adaptor,"token CONST");
 	    RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
+	    RewriteRuleITokenStream stream_47=new RewriteRuleITokenStream(adaptor,"token 47");
 	    RewriteRuleITokenStream stream_46=new RewriteRuleITokenStream(adaptor,"token 46");
-	    RewriteRuleITokenStream stream_45=new RewriteRuleITokenStream(adaptor,"token 45");
 
 		try { DebugEnterRule(GrammarFileName, "frag_declaration");
 		DebugLocation(56, 54);
@@ -856,8 +857,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 			stream_ID.Add(ID20);
 
 			DebugLocation(57, 13);
-			char_literal21=(IToken)Match(input,46,Follow._46_in_frag_declaration267);  
-			stream_46.Add(char_literal21);
+			char_literal21=(IToken)Match(input,47,Follow._47_in_frag_declaration267);  
+			stream_47.Add(char_literal21);
 
 			DebugLocation(57, 17);
 			ID22=(IToken)Match(input,ID,Follow._ID_in_frag_declaration269);  
@@ -868,8 +869,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 			stream_ID.Add(ID23);
 
 			DebugLocation(57, 23);
-			char_literal24=(IToken)Match(input,45,Follow._45_in_frag_declaration273);  
-			stream_45.Add(char_literal24);
+			char_literal24=(IToken)Match(input,46,Follow._46_in_frag_declaration273);  
+			stream_46.Add(char_literal24);
 
 
 
@@ -972,10 +973,10 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 	    object char_literal31_tree = default(object);
 	    RewriteRuleITokenStream stream_IF=new RewriteRuleITokenStream(adaptor,"token IF");
 	    RewriteRuleITokenStream stream_Modifier=new RewriteRuleITokenStream(adaptor,"token Modifier");
-	    RewriteRuleITokenStream stream_46=new RewriteRuleITokenStream(adaptor,"token 46");
+	    RewriteRuleITokenStream stream_47=new RewriteRuleITokenStream(adaptor,"token 47");
 	    RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
-	    RewriteRuleITokenStream stream_43=new RewriteRuleITokenStream(adaptor,"token 43");
-	    RewriteRuleITokenStream stream_45=new RewriteRuleITokenStream(adaptor,"token 45");
+	    RewriteRuleITokenStream stream_44=new RewriteRuleITokenStream(adaptor,"token 44");
+	    RewriteRuleITokenStream stream_46=new RewriteRuleITokenStream(adaptor,"token 46");
 
 		try { DebugEnterRule(GrammarFileName, "modifier_declaration");
 		DebugLocation(59, 73);
@@ -994,8 +995,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 			stream_Modifier.Add(Modifier26);
 
 			DebugLocation(60, 16);
-			char_literal27=(IToken)Match(input,46,Follow._46_in_modifier_declaration304);  
-			stream_46.Add(char_literal27);
+			char_literal27=(IToken)Match(input,47,Follow._47_in_modifier_declaration304);  
+			stream_47.Add(char_literal27);
 
 			DebugLocation(60, 20);
 			ID28=(IToken)Match(input,ID,Follow._ID_in_modifier_declaration306);  
@@ -1010,7 +1011,7 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 				try { DebugEnterDecision(5, decisionCanBacktrack[5]);
 				int LA5_1 = input.LA(1);
 
-				if ((LA5_1==43))
+				if ((LA5_1==44))
 				{
 					alt5 = 1;
 				}
@@ -1024,8 +1025,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 					// .\\MessageContracts.g:60:24: ',' ID
 					{
 					DebugLocation(60, 24);
-					char_literal29=(IToken)Match(input,43,Follow._43_in_modifier_declaration309);  
-					stream_43.Add(char_literal29);
+					char_literal29=(IToken)Match(input,44,Follow._44_in_modifier_declaration309);  
+					stream_44.Add(char_literal29);
 
 					DebugLocation(60, 28);
 					ID30=(IToken)Match(input,ID,Follow._ID_in_modifier_declaration311);  
@@ -1046,8 +1047,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(5); }
 
 			DebugLocation(60, 33);
-			char_literal31=(IToken)Match(input,45,Follow._45_in_modifier_declaration315);  
-			stream_45.Add(char_literal31);
+			char_literal31=(IToken)Match(input,46,Follow._46_in_modifier_declaration315);  
+			stream_46.Add(char_literal31);
 
 
 
@@ -1151,8 +1152,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 	    object char_literal36_tree = default(object);
 	    RewriteRuleITokenStream stream_INTERFACE=new RewriteRuleITokenStream(adaptor,"token INTERFACE");
 	    RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
-	    RewriteRuleITokenStream stream_47=new RewriteRuleITokenStream(adaptor,"token 47");
 	    RewriteRuleITokenStream stream_48=new RewriteRuleITokenStream(adaptor,"token 48");
+	    RewriteRuleITokenStream stream_49=new RewriteRuleITokenStream(adaptor,"token 49");
 	    RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 	    RewriteRuleSubtreeStream stream_declaration=new RewriteRuleSubtreeStream(adaptor,"rule declaration");
 		try { DebugEnterRule(GrammarFileName, "entity_declaration");
@@ -1178,8 +1179,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 
 			stream_block.Add(block33.Tree);
 			DebugLocation(63, 27);
-			char_literal34=(IToken)Match(input,47,Follow._47_in_entity_declaration345);  
-			stream_47.Add(char_literal34);
+			char_literal34=(IToken)Match(input,48,Follow._48_in_entity_declaration345);  
+			stream_48.Add(char_literal34);
 
 			DebugLocation(63, 31);
 			// .\\MessageContracts.g:63:31: ( declaration )*
@@ -1224,8 +1225,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(6); }
 
 			DebugLocation(63, 44);
-			char_literal36=(IToken)Match(input,48,Follow._48_in_entity_declaration350);  
-			stream_48.Add(char_literal36);
+			char_literal36=(IToken)Match(input,49,Follow._49_in_entity_declaration350);  
+			stream_49.Add(char_literal36);
 
 
 
@@ -1491,7 +1492,7 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 				{
 					alt8 = 1;
 				}
-				else if (((LA8_2>=42 && LA8_2<=43)))
+				else if (((LA8_2>=43 && LA8_2<=44)))
 				{
 					alt8 = 2;
 				}
@@ -1663,9 +1664,9 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 	    object lc_tree = default(object);
 	    object char_literal44_tree = default(object);
 	    object char_literal46_tree = default(object);
-	    RewriteRuleITokenStream stream_41=new RewriteRuleITokenStream(adaptor,"token 41");
-	    RewriteRuleITokenStream stream_43=new RewriteRuleITokenStream(adaptor,"token 43");
 	    RewriteRuleITokenStream stream_42=new RewriteRuleITokenStream(adaptor,"token 42");
+	    RewriteRuleITokenStream stream_44=new RewriteRuleITokenStream(adaptor,"token 44");
+	    RewriteRuleITokenStream stream_43=new RewriteRuleITokenStream(adaptor,"token 43");
 	    RewriteRuleSubtreeStream stream_member=new RewriteRuleSubtreeStream(adaptor,"rule member");
 	    RewriteRuleSubtreeStream stream_representation=new RewriteRuleSubtreeStream(adaptor,"rule representation");
 	    RewriteRuleSubtreeStream stream_comGuid=new RewriteRuleSubtreeStream(adaptor,"rule comGuid");
@@ -1679,8 +1680,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 			// .\\MessageContracts.g:76:9: lc= '(' ( member ( ',' member )* )? ')' ( representation )? ( comGuid )? ( comInterfaceGuid )?
 			{
 			DebugLocation(76, 11);
-			lc=(IToken)Match(input,41,Follow._41_in_block451);  
-			stream_41.Add(lc);
+			lc=(IToken)Match(input,42,Follow._42_in_block451);  
+			stream_42.Add(lc);
 
 			DebugLocation(77, 13);
 			// .\\MessageContracts.g:77:13: ( member ( ',' member )* )?
@@ -1715,7 +1716,7 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 					try { DebugEnterDecision(9, decisionCanBacktrack[9]);
 					int LA9_1 = input.LA(1);
 
-					if ((LA9_1==43))
+					if ((LA9_1==44))
 					{
 						alt9 = 1;
 					}
@@ -1729,8 +1730,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 						// .\\MessageContracts.g:77:22: ',' member
 						{
 						DebugLocation(77, 22);
-						char_literal44=(IToken)Match(input,43,Follow._43_in_block469);  
-						stream_43.Add(char_literal44);
+						char_literal44=(IToken)Match(input,44,Follow._44_in_block469);  
+						stream_44.Add(char_literal44);
 
 						DebugLocation(77, 26);
 						PushFollow(Follow._member_in_block471);
@@ -1760,8 +1761,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(10); }
 
 			DebugLocation(78, 9);
-			char_literal46=(IToken)Match(input,42,Follow._42_in_block485);  
-			stream_42.Add(char_literal46);
+			char_literal46=(IToken)Match(input,43,Follow._43_in_block485);  
+			stream_43.Add(char_literal46);
 
 			DebugLocation(78, 13);
 			// .\\MessageContracts.g:78:13: ( representation )?
@@ -2083,7 +2084,7 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 	    object char_literal54_tree = default(object);
 	    RewriteRuleITokenStream stream_EXTERN=new RewriteRuleITokenStream(adaptor,"token EXTERN");
 	    RewriteRuleITokenStream stream_STRING=new RewriteRuleITokenStream(adaptor,"token STRING");
-	    RewriteRuleITokenStream stream_45=new RewriteRuleITokenStream(adaptor,"token 45");
+	    RewriteRuleITokenStream stream_46=new RewriteRuleITokenStream(adaptor,"token 46");
 
 		try { DebugEnterRule(GrammarFileName, "extern_declaration");
 		DebugLocation(85, 50);
@@ -2102,8 +2103,8 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 			stream_STRING.Add(STRING53);
 
 			DebugLocation(86, 23);
-			char_literal54=(IToken)Match(input,45,Follow._45_in_extern_declaration572);  
-			stream_45.Add(char_literal54);
+			char_literal54=(IToken)Match(input,46,Follow._46_in_extern_declaration572);  
+			stream_46.Add(char_literal54);
 
 
 
@@ -2380,7 +2381,7 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 	#region Follow sets
 	private static class Follow
 	{
-		public static readonly BitSet _declaration_in_program125 = new BitSet(new ulong[]{0x408B008102UL});
+		public static readonly BitSet _declaration_in_program125 = new BitSet(new ulong[]{0x808B008102UL});
 		public static readonly BitSet _modifier_declaration_in_declaration138 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _frag_declaration_in_declaration143 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _type_declaration_in_declaration148 = new BitSet(new ulong[]{0x2UL});
@@ -2389,53 +2390,53 @@ public partial class MessageContractsParser : Antlr.Runtime.Parser
 		public static readonly BitSet _extern_declaration_in_declaration164 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _using_declaration_in_declaration169 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _NAMESPACE_in_namespace_declaration183 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _ID_in_namespace_declaration186 = new BitSet(new ulong[]{0x300000000000UL});
-		public static readonly BitSet _44_in_namespace_declaration189 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _ID_in_namespace_declaration191 = new BitSet(new ulong[]{0x300000000000UL});
-		public static readonly BitSet _45_in_namespace_declaration196 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_namespace_declaration186 = new BitSet(new ulong[]{0x600000000000UL});
+		public static readonly BitSet _45_in_namespace_declaration189 = new BitSet(new ulong[]{0x1000000UL});
+		public static readonly BitSet _ID_in_namespace_declaration191 = new BitSet(new ulong[]{0x600000000000UL});
+		public static readonly BitSet _46_in_namespace_declaration196 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _USING_in_using_declaration226 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _ID_in_using_declaration229 = new BitSet(new ulong[]{0x300000000000UL});
-		public static readonly BitSet _44_in_using_declaration232 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _ID_in_using_declaration234 = new BitSet(new ulong[]{0x300000000000UL});
-		public static readonly BitSet _45_in_using_declaration239 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_using_declaration229 = new BitSet(new ulong[]{0x600000000000UL});
+		public static readonly BitSet _45_in_using_declaration232 = new BitSet(new ulong[]{0x1000000UL});
+		public static readonly BitSet _ID_in_using_declaration234 = new BitSet(new ulong[]{0x600000000000UL});
+		public static readonly BitSet _46_in_using_declaration239 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _CONST_in_frag_declaration263 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _ID_in_frag_declaration265 = new BitSet(new ulong[]{0x400000000000UL});
-		public static readonly BitSet _46_in_frag_declaration267 = new BitSet(new ulong[]{0x1000000UL});
+		public static readonly BitSet _ID_in_frag_declaration265 = new BitSet(new ulong[]{0x800000000000UL});
+		public static readonly BitSet _47_in_frag_declaration267 = new BitSet(new ulong[]{0x1000000UL});
 		public static readonly BitSet _ID_in_frag_declaration269 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _ID_in_frag_declaration271 = new BitSet(new ulong[]{0x200000000000UL});
-		public static readonly BitSet _45_in_frag_declaration273 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_frag_declaration271 = new BitSet(new ulong[]{0x400000000000UL});
+		public static readonly BitSet _46_in_frag_declaration273 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _IF_in_modifier_declaration300 = new BitSet(new ulong[]{0x20000000UL});
-		public static readonly BitSet _Modifier_in_modifier_declaration302 = new BitSet(new ulong[]{0x400000000000UL});
-		public static readonly BitSet _46_in_modifier_declaration304 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _ID_in_modifier_declaration306 = new BitSet(new ulong[]{0x280000000000UL});
-		public static readonly BitSet _43_in_modifier_declaration309 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _ID_in_modifier_declaration311 = new BitSet(new ulong[]{0x280000000000UL});
-		public static readonly BitSet _45_in_modifier_declaration315 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _Modifier_in_modifier_declaration302 = new BitSet(new ulong[]{0x800000000000UL});
+		public static readonly BitSet _47_in_modifier_declaration304 = new BitSet(new ulong[]{0x1000000UL});
+		public static readonly BitSet _ID_in_modifier_declaration306 = new BitSet(new ulong[]{0x500000000000UL});
+		public static readonly BitSet _44_in_modifier_declaration309 = new BitSet(new ulong[]{0x1000000UL});
+		public static readonly BitSet _ID_in_modifier_declaration311 = new BitSet(new ulong[]{0x500000000000UL});
+		public static readonly BitSet _46_in_modifier_declaration315 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _INTERFACE_in_entity_declaration339 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _ID_in_entity_declaration341 = new BitSet(new ulong[]{0x20000000000UL});
-		public static readonly BitSet _block_in_entity_declaration343 = new BitSet(new ulong[]{0x800000000000UL});
-		public static readonly BitSet _47_in_entity_declaration345 = new BitSet(new ulong[]{0x100408B008100UL});
-		public static readonly BitSet _declaration_in_entity_declaration347 = new BitSet(new ulong[]{0x100408B008100UL});
-		public static readonly BitSet _48_in_entity_declaration350 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_type_declaration376 = new BitSet(new ulong[]{0x20020000000UL});
-		public static readonly BitSet _Modifier_in_type_declaration378 = new BitSet(new ulong[]{0x20000000000UL});
+		public static readonly BitSet _ID_in_entity_declaration341 = new BitSet(new ulong[]{0x40000000000UL});
+		public static readonly BitSet _block_in_entity_declaration343 = new BitSet(new ulong[]{0x1000000000000UL});
+		public static readonly BitSet _48_in_entity_declaration345 = new BitSet(new ulong[]{0x200808B008100UL});
+		public static readonly BitSet _declaration_in_entity_declaration347 = new BitSet(new ulong[]{0x200808B008100UL});
+		public static readonly BitSet _49_in_entity_declaration350 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_type_declaration376 = new BitSet(new ulong[]{0x40020000000UL});
+		public static readonly BitSet _Modifier_in_type_declaration378 = new BitSet(new ulong[]{0x40000000000UL});
 		public static readonly BitSet _block_in_type_declaration381 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _ID_in_member406 = new BitSet(new ulong[]{0x1000000UL});
 		public static readonly BitSet _ID_in_member408 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _ID_in_member423 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _41_in_block451 = new BitSet(new ulong[]{0x40001000000UL});
-		public static readonly BitSet _member_in_block466 = new BitSet(new ulong[]{0xC0000000000UL});
-		public static readonly BitSet _43_in_block469 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _member_in_block471 = new BitSet(new ulong[]{0xC0000000000UL});
-		public static readonly BitSet _42_in_block485 = new BitSet(new ulong[]{0x4052UL});
+		public static readonly BitSet _42_in_block451 = new BitSet(new ulong[]{0x80001000000UL});
+		public static readonly BitSet _member_in_block466 = new BitSet(new ulong[]{0x180000000000UL});
+		public static readonly BitSet _44_in_block469 = new BitSet(new ulong[]{0x1000000UL});
+		public static readonly BitSet _member_in_block471 = new BitSet(new ulong[]{0x180000000000UL});
+		public static readonly BitSet _43_in_block485 = new BitSet(new ulong[]{0x4052UL});
 		public static readonly BitSet _representation_in_block487 = new BitSet(new ulong[]{0x52UL});
 		public static readonly BitSet _comGuid_in_block490 = new BitSet(new ulong[]{0x12UL});
 		public static readonly BitSet _comInterfaceGuid_in_block493 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _EXPLICIT_in_representation543 = new BitSet(new ulong[]{0x400000000UL});
+		public static readonly BitSet _EXPLICIT_in_representation543 = new BitSet(new ulong[]{0x800000000UL});
 		public static readonly BitSet _STRING_in_representation545 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _EXTERN_in_extern_declaration568 = new BitSet(new ulong[]{0x400000000UL});
-		public static readonly BitSet _STRING_in_extern_declaration570 = new BitSet(new ulong[]{0x200000000000UL});
-		public static readonly BitSet _45_in_extern_declaration572 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _EXTERN_in_extern_declaration568 = new BitSet(new ulong[]{0x800000000UL});
+		public static readonly BitSet _STRING_in_extern_declaration570 = new BitSet(new ulong[]{0x400000000000UL});
+		public static readonly BitSet _46_in_extern_declaration572 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _CLASS_in_comGuid592 = new BitSet(new ulong[]{0x400000UL});
 		public static readonly BitSet _GUID_in_comGuid594 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _ALIAS_in_comInterfaceGuid611 = new BitSet(new ulong[]{0x400000UL});
