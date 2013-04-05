@@ -89,7 +89,7 @@ public sealed class {0}";
                     WriteMembers(contract, writer);
 
                     writer.WriteLine();
-                    WritePrivateCtor(writer, contract);
+                    WriteNotSoPrivateAnymoreCtor(writer, contract);
 
                     writer.Write("public {0} (", contract.Name);
                     WriteParameters(contract, writer);
@@ -164,12 +164,12 @@ public sealed class {0}";
             writer.WriteLine("[ClassInterface(ClassInterfaceType.None)]");
         }
 
-        static void WritePrivateCtor(CodeWriter writer, Message contract)
+        static void WriteNotSoPrivateAnymoreCtor(CodeWriter writer, Message contract)
         {
             var arrays = contract.Members.Where(p => p.Type.EndsWith("[]")).ToArray();
             if (!arrays.Any())
             {
-                writer.WriteLine(@"{0} () {{}}", contract.Name);
+                writer.WriteLine(@"public {0} () {{}}", contract.Name);
             }
             else
             {
